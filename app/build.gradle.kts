@@ -44,7 +44,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "com.felipe.teste.App"
+    mainClass = "com.yasha.store.App"
 }
 
 tasks.named<Test>("test") {
