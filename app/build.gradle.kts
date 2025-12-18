@@ -9,6 +9,7 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
     id("org.springframework.boot") version "4.0.0"
+    id ("io.freefair.lombok") version "8.14"
 }
 
 repositories {
@@ -17,20 +18,22 @@ repositories {
 }
 
 dependencies {
+    implementation("org.springframework.boot:spring-boot-starter-web:4.0.0")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:4.0.0")
+    testImplementation("org.springframework.boot:spring-boot-starter-test:4.0.0")
+
+
+    implementation ("org.mapstruct:mapstruct:1.6.3")
+    annotationProcessor ("org.mapstruct:mapstruct-processor:1.6.3")
+    testAnnotationProcessor ("org.mapstruct:mapstruct-processor:1.6.3")
+ 
+    testImplementation("com.h2database:h2:2.4.240")
+
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
     // Use JUnit Jupiter for testing.
     testImplementation(libs.junit.jupiter)
 
-    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
-    implementation("org.springframework.boot:spring-boot-starter-web:4.0.0")
-    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa:4.0.0")
-    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
-    testImplementation("org.springframework.boot:spring-boot-starter-test:4.0.0")
-
-    // https://mvnrepository.com/artifact/com.h2database/h2
-    implementation("com.h2database:h2:2.4.240")
-
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     // This dependency is used by the application.
     implementation(libs.guava)
