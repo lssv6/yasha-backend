@@ -2,6 +2,7 @@ package com.yasha.store.service;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.mockito.stubbing.Answer;
 
 import static org.mockito.BDDMockito.given;
 
@@ -57,6 +58,18 @@ public class CategoryServiceTest {
         // Assert
         assertNotNull(dto);
         assertEquals("Perfume", dto.name());
+    }
+
+    @Test void shouldUpdateCategory(){
+        // Arrange
+        given(repository.save(any())).willAnswer(ans -> ans.getArgument(0));
+
+        // Act
+        CategorySaveDTO categoryDTOSave = new CategorySaveDTO("Perfumaria", "/perfumaria");
+        CategoryResponseDTO dto = service.update(69L, categoryDTOSave);
+
+        assertEquals("Perfumaria", dto.name());
+        assertEquals("/perfumaria", dto.path());
     }
 }
 

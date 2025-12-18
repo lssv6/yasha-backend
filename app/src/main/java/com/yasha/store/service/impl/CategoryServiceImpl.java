@@ -34,5 +34,12 @@ public class CategoryServiceImpl implements CategoryService{
         return dto;
         //return repository.findById(id).map(c -> mapper.toDTO(c));
     }
-}
 
+    @Override
+    public CategoryResponseDTO update(long id, CategorySaveDTO c){
+        Category entity = mapper.toEntity(c);
+        entity.setId(id);
+        Category saved = repository.save(entity);
+        return mapper.toDTO(saved);
+    }
+}
