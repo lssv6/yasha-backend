@@ -26,7 +26,8 @@ dependencies {
     implementation ("org.mapstruct:mapstruct:1.6.3")
     annotationProcessor ("org.mapstruct:mapstruct-processor:1.6.3")
     testAnnotationProcessor ("org.mapstruct:mapstruct-processor:1.6.3")
- 
+   
+    implementation("com.h2database:h2:2.4.240")
     testImplementation("com.h2database:h2:2.4.240")
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
