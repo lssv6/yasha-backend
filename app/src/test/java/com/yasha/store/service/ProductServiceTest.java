@@ -2,7 +2,6 @@ package com.yasha.store.service;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.mapstruct.Mapper;
 import org.mockito.InjectMocks;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -16,7 +15,6 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import com.yasha.store.dto.ProductResponseDTO;
 import com.yasha.store.dto.ProductSaveDTO;
 import com.yasha.store.entity.Product;
-import com.yasha.store.mapping.ProductMapper;
 import com.yasha.store.repository.ProductRepository;
 
 @SpringBootTest
