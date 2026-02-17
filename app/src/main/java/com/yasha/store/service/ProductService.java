@@ -9,4 +9,7 @@ public interface ProductService{
     public Optional<ProductResponseDTO> findById(Long id);
     public ProductResponseDTO save(ProductSaveDTO productSaveDTO);
     
+    ProductResponseDTO update(Long id, ProductSaveDTO toSave);
+    void delete(Long id);
+    
 }
